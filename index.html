@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidya Rakshak UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div class="glass-card w-full max-w-7xl h-[90vh] max-h-[850px] rounded-[2.5rem] shadow-2xl flex overflow-visible">
+
+        <!-- ---------------- LEFT PANEL ---------------- -->
+        <div class="left-panel-glass w-full max-w-xs h-full rounded-l-[2.5rem] p-6 flex flex-col overflow-visible">
+
+            <!-- Search Bar -->
+            <div class="flex items-center space-x-3 bg-white/10 p-2.5 rounded-lg mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+
+                <input type="text" id="searchInput" placeholder="search"
+                    class="bg-transparent text-white placeholder-gray-300 w-full outline-none border-none text-sm">
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </div>
+
+            <!-- Topic List -->
+            <nav class="flex-grow overflow-y-auto">
+                <ul id="topicList" class="space-y-2 text-white">
+                    <li id="topic-0">Sustainable Smart Park.</li>
+                    <li id="topic-1">Learn Meaning Of Ozone.</li>
+                    <li id="topic-2">What Mean Trees To Us.</li>
+                    <li>Dare To Clean Air.</li>
+                    <li>Soil Mean What To Us.</li>
+                    <li>Energy Means Soil,Air,Land.</li>
+                    <li>Control Smoke.</li>
+                    <li>Throw Nothing In Water.</li>
+                    <li>Do Burn It's Burn Air.</li>
+                    <li>Waring Means Waming.</li>
+                    <li>Let's learn Clean.</li>
+                    <li>Whole Universe Is Our Home.</li>
+                    <li>Nature What Mean To Us.</li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- ---------------- RIGHT MAIN CONTENT ---------------- -->
+        <div class="flex-grow flex flex-col p-6 pl-8 overflow-visible">
+
+            <!-- HEADER -->
+            <header class="flex-shrink-0 flex items-center justify-between text-white mb-6">
+
+                <div class="flex items-center">
+                    <img src="logo.png" class="h-10 w-20 mr-4" alt="Logo">
+                    <h1 class="text-3xl font-bold tracking-wide">Vidya Rakshak</h1>
+                </div>
+
+                <div class="flex items-center space-x-4">
+
+                    <!-- Activity -->
+                    <div class="flex items-center space-x-2">
+                        <button class="header-box flex items-center justify-center h-6 w-6 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </button>
+
+                        <div class="header-box flex items-center px-3 h-6 rounded-full">
+                            <span class="font-semibold text-sm">Activity 1/10</span>
+                        </div>
+                    </div>
+
+                    <!-- Coin -->
+                    <div class="header-box flex items-center space-x-1 px-3 h-6 rounded-full">
+                        <img src="no bg coin.png" class="h-full w-auto" alt="">
+                        <span class="font-semibold text-sm">125</span>
+                    </div>
+
+                    <!-- User Menu -->
+                    <div class="relative z-40"> <!-- Ensures menu appears above glass layers -->
+                        <button id="userMenuBtn" class="flex items-center space-x-2">
+                            <span class="user-logo w-8 h-8 rounded-full bg-gray-600 overflow-hidden"></span>
+                            <span class="text-sm font-semibold">User</span>
+                        </button>
+
+                        <!-- DROPDOWN FLOATS ABOVE GLASS -->
+                        <div id="userDropdown"
+                            class="absolute top-full right-0 mt-2 w-48 rounded-md shadow-2xl 
+                                   bg-gray-900/95 backdrop-blur-xl 
+                                   ring-1 ring-white/10 
+                                   z-50 hidden">
+                            <div class="py-1">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">
+                                    Log Out
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </header>
+
+            <!-- ---------------- SLIDER SECTION ---------------- -->
+            <main class="flex-grow flex items-center justify-center relative overflow-visible">
+
+                <div id="slider" class="relative w-full h-full overflow-visible">
+
+                    <div class="slider-frame-glass w-full h-full rounded-3xl p-4 flex items-center justify-center overflow-visible">
+                        <div id="imageContainer" class="relative w-full h-full rounded-2xl overflow-hidden shadow-lg"></div>
+                    </div>
+
+                    <!-- Navigation -->
+                    <button id="prevBtn"
+                        class="slider-nav absolute top-1/2 left-2 transform -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-white z-30">
+                        ‹
+                    </button>
+
+                    <button id="nextBtn"
+                        class="slider-nav absolute top-1/2 right-2 transform -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-white z-30">
+                        ›
+                    </button>
+
+                    <!-- Pagination + Jump Button -->
+                    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-3 z-30">
+                        <div id="pagination-dots" class="pagination-pill rounded-full px-4 py-2 flex space-x-4"></div>
+
+                        <button class="jump-into-btn rounded-full px-20 py-3 text-white font-semibold text-sm tracking-wider">
+                            JUMP INTO
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- ---------------- SEARCH FUNCTION ---------------- -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const searchInput = document.getElementById("searchInput");
+            const topics = document.querySelectorAll("#topicList li");
+
+            searchInput.addEventListener("input", () => {
+                const value = searchInput.value.toLowerCase();
+                topics.forEach(li => {
+                    li.style.display = li.textContent.toLowerCase().includes(value) ? "block" : "none";
+                });
+            });
+        });
+    </script>
+
+    <!-- ---------------- SLIDER LOGIC ---------------- -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const imageContainer = document.getElementById("imageContainer");
+            const prevBtn = document.getElementById("prevBtn");
+            const nextBtn = document.getElementById("nextBtn");
+            const paginationDots = document.getElementById("pagination-dots");
+            const jumpIntoBtn = document.querySelector(".jump-into-btn");
+
+            const images = ["Screen1.png", "Screen2.png", "Screen3.png", "Screen4.png"];
+            const jumpUrls = ["https://decentraland.org/play/?realm=juek396.dcl.eth", "", "", ""];
+
+            let currentIndex = 0;
+
+            function renderSlider() {
+                imageContainer.innerHTML = "";
+                paginationDots.innerHTML = "";
+
+                images.forEach((src, i) => {
+                    const img = document.createElement("img");
+                    img.src = src;
+                    img.className =
+                        `absolute inset-0 w-full h-full object-cover transition-opacity duration-700 
+                        ${i === currentIndex ? "opacity-100" : "opacity-0"}`;
+                    imageContainer.appendChild(img);
+                });
+
+                images.forEach((_, i) => {
+                    const dot = document.createElement("div");
+                    dot.className =
+                        `w-2 h-2 rounded-full cursor-pointer transition-all duration-300 
+                        ${i === currentIndex ? "bg-white" : "bg-white/40"}`;
+
+                    dot.onclick = () => {
+                        currentIndex = i;
+                        renderSlider();
+                    };
+
+                    paginationDots.appendChild(dot);
+                });
+            }
+
+            prevBtn.onclick = () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                renderSlider();
+            };
+
+            nextBtn.onclick = () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                renderSlider();
+            };
+
+            jumpIntoBtn.onclick = () => {
+                window.location.href = jumpUrls[currentIndex];
+            };
+
+            renderSlider();
+        });
+    </script>
+
+    <!-- ---------------- USER DROPDOWN ---------------- -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const userMenuBtn = document.getElementById("userMenuBtn");
+            const userDropdown = document.getElementById("userDropdown");
+
+            userMenuBtn.onclick = () => userDropdown.classList.toggle("hidden");
+
+            document.addEventListener("click", (e) => {
+                if (!userMenuBtn.contains(e.target) && !userDropdown.contains(e.target)) {
+                    userDropdown.classList.add("hidden");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
